@@ -1,0 +1,29 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: aa145071-9dc9-4737-b36f-b1f1cfcec0ae # Common
+handle: inhalt
+instructions: ''
+name: Inhalt
+searchable: true
+settings:
+  availableTransforms: '*'
+  availableVolumes:
+    - 283701df-25fb-4029-8398-1a1d4f4565bc # Dokumente
+    - 23f51a77-d65f-442f-b42d-6229758ea6d5 # Impressionen
+  columnType: text
+  configSelectionMode: choose
+  defaultTransform: ''
+  manualConfig: ''
+  purifierConfig: ''
+  purifyHtml: '1'
+  redactorConfig: Standard.json
+  removeEmptyTags: '1'
+  removeInlineStyles: '1'
+  removeNbsp: '1'
+  showHtmlButtonForNonAdmins: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\redactor\Field

@@ -1,0 +1,69 @@
+{% extends "_layout" %}
+{% set title = "Archiv" %}
+
+{% block content %}
+
+	{% set archiveYear = craft.app.request.getSegment(2) %}
+
+	{% if archiveYear > 2000 %}
+		{% set startDate = archiveYear ~ '-01-01' %}
+		{% set endDate = archiveYear ~ '-12-31' %}
+	{% else %}
+		{% set startDate = (now|date("Y")-1) ~ '-01-01' %}
+		{% set endDate = now|date("Y") ~ '-12-31' %}
+	{% endif %}
+
+	{% set yearQuery = 'and, >= ' ~ startDate ~ ', <= ' ~ endDate %}
+
+	{% if entry.headerBild is defined and entry.headerBild|length %}
+	<div class="banner" style="background-image: url({#{ entry.headerBild.one().getUrl() }#});"></div>
+	{% endif %}
+
+	<div class="section py-large">
+		<div class="container">
+			<div class="section-content">
+				<h1 class="section-title">Archiv</h1>
+				{% if craft.app.request.getSegment(2) is empty %}
+				{% set content = craft.entries.section('archiv').one() %}
+				{{ content.inhalt }}
+				{% endif %}
+
+				{% set pastEventsAll = craft.entries.section('agenda').type('aktivitaet').limit(null).datumVon(yearQuery).orderBy('datumVon DESC').all() %}
+				{% for date, pastEvents in pastEventsAll | group("datumVon|date('Y')") %}
+					<h3 class="text-red mt-regular">{{ date }}</h3>
+					<ul class="activities-list activities-list-alt">
+						{% for pastEvent in pastEvents %}
+							<li class="activities-item">
+								<div class="activities-item-image">
+									{% if pastEvent.hauptbild|length %}
+									<img src="{{ pastEvent.hauptbild.one().getUrl('hauptbildAnlaesse') }}" />
+									{% endif %}
+								</div>
+
+								<div class="activities-item-details">
+									<div class="activities-item-contents">
+										<h3 class="activities-item-title">{{ pastEvent.title }}</h3>
+
+										{% if pastEvent.datumVon|date("Y-m-d") == pastEvent.datumBis|date("Y-m-d") %}
+											{% set dateString = pastEvent.datumVon|date("d. F Y") %}
+										{% else %}
+											{% set dateString = pastEvent.datumVon|date("d.") ~ " bis " ~ pastEvent.datumBis|date("d. F Y") %}
+										{% endif %}
+										<p class="activities-item-date">{{ dateString }}</p>
+										<p class="activities-item-excerpt">
+											{{ pastEvent.teaserText|nl2br }}
+										</p>
+									</div>
+
+									<a href="{{ pastEvent.url }}" class="btn btn-red activities-item-btn">Bericht & Impressionen</a>
+								</div>
+							</li>
+						{% endfor %}
+					</ul>
+				{% endfor %}
+
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

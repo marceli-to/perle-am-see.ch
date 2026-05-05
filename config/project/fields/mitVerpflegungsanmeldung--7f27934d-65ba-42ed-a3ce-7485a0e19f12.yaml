@@ -1,0 +1,14 @@
+columnSuffix: dceaklfj
+contentColumnType: boolean
+fieldGroup: 83ac917a-7b56-4cc0-8117-026d1c05f4e1 # Agenda
+handle: mitVerpflegungsanmeldung
+instructions: 'Sollen Angaben zur Verpflegung gemacht werden können?'
+name: 'Mit Verpflegungsanmeldung?'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

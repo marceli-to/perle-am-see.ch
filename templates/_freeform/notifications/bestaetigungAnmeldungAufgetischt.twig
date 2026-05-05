@@ -1,0 +1,60 @@
+{# subject: Bestätigung Anmeldung (Aufgetischt) #}
+{# fromEmail: aufgetischt@perle-am-see.ch #}
+{# fromName: Gewerbeverein Pfäffikon ZH #}
+{# replyToName:  #}
+{# replyToEmail: aufgetischt@perle-am-see.ch #}
+{# cc:  #}
+{# bcc:  #}
+{# includeAttachments: false #}
+{# presetAssets:  #}
+{# templateName: Bestätigung Anmeldung Aufgetischt #}
+{# description: Anmelde-Bestätigung für Ausfüller des Formulars Aufgetischt #}
+
+<p>Geschätzte Gäste</p>
+
+<p>Wir freuen uns, dass Sie beim Event Aufgetischt! Tavolata an der Seestrasse dabei sind.</p>
+
+<p>Der Entscheid für eine allfällige Verschiebung auf den 4./5. September wird am Montag, 26. August, 13 Uhr getroffen.<br>
+Sie können diese Information auf der Website entnehmen www.perle-am-see.ch/verein/aufgetischt</p>
+
+<p>Die Bezahlung erfolgt vor Ort (Karte, Bar oder Twint).</p>
+
+<p>Falls Sie verhindert sind, bitten wir Sie, uns dies frühzeitig mitzuteilen. <br>
+So können wir die Plätze anderen Gästen anbieten und Lebensmittelverschwendung vermeiden.</p>
+
+<p>Auf einen schönen Sommerabend. </p>
+
+<p>Ihr OK-Aufgetischt!<br>
+Gewerbeverein Pfäffikon</p>
+
+
+<p>Anmeldung vom: {{ dateCreated|date('d.m.Y \\u\\m H:i:s \\U\\h\\r') }}</p>
+<ul>
+{% for field in allFields %}
+    <li>{{ field.label }}: {{ field.valueAsString }}</li>
+{% endfor %}
+</ul>
+{# text #}
+Geschätzte Gäste
+
+Wir freuen uns, dass Sie beim Event Aufgetischt! Tavolata an der Seestrasse dabei sind.
+
+Der Entscheid für eine allfällige Verschiebung auf den 4./5. September wird am Montag, 26. August, 13 Uhr getroffen.
+Sie können diese Information auf der Website entnehmen www.perle-am-see.ch/verein/aufgetischt
+
+Die Bezahlung erfolgt vor Ort (Karte, Bar oder Twint).
+
+Falls Sie verhindert sind, bitten wir Sie, uns dies frühzeitig mitzuteilen. 
+So können wir die Plätze anderen Gästen anbieten und Lebensmittelverschwendung vermeiden.
+
+Auf einen schönen Sommerabend. 
+
+Ihr OK-Aufgetischt!
+Gewerbeverein Pfäffikon
+
+Anmeldung vom: {{ dateCreated|date('d.m.Y \\u\\m H:i:s \\U\\h\\r') }}
+
+{% for field in allFields %}
+ - {{ field.label }}: {{ field.valueAsString }}
+{% endfor %}
+{# /text #}

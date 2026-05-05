@@ -1,0 +1,9 @@
+siteUid: null
+sortOrder: 10
+template: archiv
+uriParts:
+  - archiv/
+  -
+    - year
+    - '\d{4}'
+uriPattern: 'archiv/<year:\d{4}>'

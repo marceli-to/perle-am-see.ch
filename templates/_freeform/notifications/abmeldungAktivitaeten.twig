@@ -1,0 +1,43 @@
+{# subject: Abmeldung ({{ aktivitaet }}) #}
+{# fromEmail: info@perle-am-see.ch #}
+{# fromName: Gewerbeverein Pfäffikon ZH #}
+{# replyToName:  #}
+{# replyToEmail:  #}
+{# cc:  #}
+{# bcc:  #}
+{# includeAttachments: false #}
+{# presetAssets:  #}
+{# templateName: Abmeldung Aktivitäten #}
+{# description:  #}
+
+<p>Sehr geehrtes Gewerbeverein-Mitglied</p>
+<p>Wir haben deine Abmeldung erhalten.</p>
+<p>Schade, dass du nicht dabei sein kannst.</p>
+<p>Abmeldung vom: {{ dateCreated|date('d.m.Y \\u\\m H:i:s \\U\\h\\r') }}</p>
+<ul>
+{% for field in allFields %}
+    <li>{{ field.label }}: {{ field.valueAsString }}</li>
+{% endfor %}
+</ul>
+<p>Wir freuen uns, dich am nächsten Event zu begrüssen.</p>
+<p>Freundliche Grüsse<br>
+Der Gewerbeverein Pfäffikon<br>
+info@perle-am-see.ch</p>
+{# text #}
+Sehr geehrtes Gewerbeverein-Mitglied
+
+Wir haben deine Abmeldung erhalten.
+Schade, dass du nicht dabei sein kannst.
+
+Abmeldung vom: {{ dateCreated|date('d.m.Y \\u\\m H:i:s \\U\\h\\r') }}
+
+{% for field in allFields %}
+ - {{ field.label }}: {{ field.valueAsString }}
+{% endfor %}
+
+Wir freuen uns, dich am nächsten Event zu begrüssen.
+
+Freundliche Grüsse
+Der Gewerbeverein Pfäffikon
+info@perle-am-see.ch
+{# /text #}

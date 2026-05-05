@@ -1,0 +1,51 @@
+fieldLayouts:
+  7daae747-be90-441f-a1e1-4e827df9aa5f:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: c1a8d800-53d8-4ef1-ab9a-a0cbe0c74497 # Inhalt
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            style: tip
+            tip: "Mitglieder können nicht im CMS verwaltet werden, es wird immer die aktuellste Version aus dem KVG auf der Webseite angezeigt.\r\nÄnderungen müssen direkt im KGV vorgenommen werden."
+            type: craft\fieldlayoutelements\Tip
+        name: Common
+        sortOrder: 1
+handle: mitglieder
+hasTitleField: false
+name: Mitglieder
+section: 9873d9bf-726d-41d9-a164-bc5024fa7cd9 # Mitglieder
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

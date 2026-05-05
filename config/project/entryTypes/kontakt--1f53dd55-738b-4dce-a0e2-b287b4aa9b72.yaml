@@ -1,0 +1,65 @@
+fieldLayouts:
+  4e689da3-57df-4f3c-b44f-08fa7c0ec4f9:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: c1a8d800-53d8-4ef1-ab9a-a0cbe0c74497 # Inhalt
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4d58e5d5-ed7e-4371-85c3-f24d15c071dd # Empfänger Kontaktformular
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: da730886-0c4c-44a5-807f-cd12ade7b056 # Empfänger Mitgliederanmeldung
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Kontakt
+        sortOrder: 1
+handle: kontakt
+hasTitleField: false
+name: Kontakt
+section: b099e06b-a68a-4a63-9ff0-1ec5266f5025 # Kontakt
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

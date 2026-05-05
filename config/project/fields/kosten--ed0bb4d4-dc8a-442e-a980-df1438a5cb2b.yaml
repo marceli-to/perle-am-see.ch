@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: 83ac917a-7b56-4cc0-8117-026d1c05f4e1 # Agenda
+handle: kosten
+instructions: 'Bitte ausformulieren, z.B. "CHF 25.- pro Person".'
+name: Kosten
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: 'CHF 25.- pro Person'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

@@ -1,0 +1,167 @@
+fieldLayouts:
+  7fb8f434-ec3b-4f17-936a-c621ecbd750d:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: 'Name Navigation'
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 4bd90377-b9dd-4903-b4d6-db0ee350471a
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 9d4e1350-8766-452b-9bdf-627df90fe9ef # Titel
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2429f03d-8495-4884-8373-975e2102347d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: ece69c20-e9b9-4c5a-afd0-af0142717b1f # Header Bild
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 68934b71-486b-4a31-8fea-2bc5b02eb54b
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 2a8279a9-41f1-46af-afd5-7b2c981facdc # Bild "Über den Verein"
+            instructions: null
+            label: Bild
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3bdbe0c1-3a1e-4daf-8556-fa05778e27bb
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: eeaddc0e-c672-41d0-9dfc-12e3d1215837 # Über den Verein
+            instructions: null
+            label: Text
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fd7b0fdd-503b-4002-84d2-a5a26af3fc18
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: c1a8d800-53d8-4ef1-ab9a-a0cbe0c74497 # Inhalt
+            instructions: "Zeichenfolge ###LOGOWALL### (bzw.  ###LOGOWALL2###  ###LOGOWALL3###) gibt an, wo die Logos ausgegeben werden. \r\nMit dem Zusatz -HORIZONTAL (z.B.  ###LOGOWALL2-HORIZONTAL### ) wird die Logo Wall horizontal ausgegeben."
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ce29169f-15f9-4110-8ce8-81bb609a1ded
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 50e2d344-3fd1-4402-ac81-e980c96e44fd # Logo Wall
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8bfae61c-ca07-4ab2-861d-e26b0905a996
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: b15a5634-281a-48fa-a5c2-774757d0a092 # Logo Wall 2
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a9ffd64b-ef9f-40e7-bf5d-1ce003e85481
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1668a20d-1acd-4c5f-99f3-faf4b93812cd # Logo Wall 3
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: bedadf14-cce1-4af8-9329-6b4e019f26e7
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: cd759a45-700d-4983-952f-61e42f7845fa # Anmeldefrist
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a72bb9c5-fd0d-4517-aca7-6fc6165cb5af
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            elementCondition: null
+            fieldUid: 1531bfd4-fd78-45bc-b589-5f3aa810cba0 # E-Mail Adresse für Anmeldungen
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ee2ddcdb-ff47-42f2-974c-179d631274d6
+            userCondition: null
+            warning: null
+            width: 100
+        name: Inhalt
+        uid: 811748dc-df66-47ab-b4ef-c2eb4f9aa3ac
+        userCondition: null
+handle: aufgetischt
+hasTitleField: true
+name: Aufgetischt
+section: 2bee5228-9156-4b89-ba93-efb8fd0324e7 # Vereinsseiten
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+sortOrder: 4
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

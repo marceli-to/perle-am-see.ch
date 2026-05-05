@@ -1,0 +1,37 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: aa145071-9dc9-4737-b36f-b1f1cfcec0ae # Common
+handle: logoWall2
+instructions: 'Optimale Logo-Höhe: 200px'
+name: 'Logo Wall 2'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  branchLimit: null
+  defaultUploadLocationSource: 'volume:283701df-25fb-4029-8398-1a1d4f4565bc' # Dokumente
+  defaultUploadLocationSubpath: null
+  localizeRelations: false
+  maintainHierarchy: false
+  maxRelations: null
+  minRelations: null
+  previewMode: full
+  restrictFiles: true
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:f5e4b89e-ec81-462f-8f83-16126d8fe0f4' # Logo Wall
+  restrictedLocationSubpath: null
+  selectionLabel: 'Logo hinzufügen'
+  showSiteMenu: false
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: false
+  viewMode: large
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

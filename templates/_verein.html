@@ -1,0 +1,117 @@
+{% extends "_layout" %}
+{% set title = "Mitglieder" %}
+
+{% block content %}
+
+	{% if entry.headerBild|length %}
+	<div class="banner" style="background-image: url({{ entry.headerBild.one().getUrl() }});"></div>
+	{% endif %}
+	
+	<div id="ueber-den-verein" class="section py-regular">
+		<div class="container">
+			<div class="section-content">
+				<h1 class="section-title">Über den Verein</h1>
+				{{ entry.ueberDenVerein }}
+			</div>
+		</div>
+	</div>
+
+	<div id="vorstand" class="section py-regular bg-lightgray">
+		<div class="container">
+			<div class="section-content">
+				<h2 class="section-title">Vorstand</h2>
+
+				<div class="div-table">
+					{% for row in entry.vorstand %}
+					<div class="row div-table-row">
+						<div class="col-lg-3">
+							<b>{{ row.funktion }}</b>
+						</div>
+						<div class="col-lg-4">
+							{{ row.name }}
+						</div>
+						<div class="col-lg-4">
+							{{ row.firmaMitglied }}
+						</div>
+						<div class="col-lg-1">
+							{% for line in row.eMail|replace({' ': ''})|split('/')|raw %}
+							<a href="mailto:{{ line }}" title="Mail an: {{ line }}" class="text-inherit">
+								<svg class="icon-envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg>
+							</a>							
+							{%endfor%}						
+						</div>
+					</div>
+					{% endfor %}
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="dokumente" class="section py-regular">
+		<div class="container">
+			<div class="section-content">
+				<h2 class="section-title">Dokumente</h2>
+				{{ entry.dateien }}
+
+				<div class="row">
+					<div class="col-lg-3 py-small">
+						<h3 class="text-uppercase">Statuten</h3>
+						<ul class="status-links">
+							{% if entry.statuten|length %}
+							{% for file in entry.statuten.all() %}
+							<li>
+								<a href="{{ file.url }}" target="_blank" class="btn btn-outline-red">{{ file.title  }}</a>
+							</li>
+							{% endfor %}
+							{% else %}
+							Aktuell sind keine Statuten zum Download verfügbar.
+							{% endif %}
+						</ul>
+					</div>
+
+					<div class="col-lg-3 py-small">
+						<h3 class="text-uppercase">Protokolle</h3>
+						<ul class="status-links">
+							{% if entry.protokolle|length %}
+							{% for file in entry.protokolle.all() %}
+							<li>
+								<a href="{{ file.url }}" target="_blank" class="btn btn-outline-red">{{ file.title  }}</a>
+							</li>
+							{% endfor %}
+							{% else %}
+							Aktuell sind keine Protokolle zum Download verfügbar.
+							{% endif %}						
+						</ul>
+					</div>
+
+					<div class="col-lg-3 py-small">
+						<h3 class="text-uppercase">Allgemeines</h3>
+						<ul class="status-links">
+							{% if entry.allgemeines|length %}
+							{% for file in entry.allgemeines.all() %}
+							<li>
+								<a href="{{ file.url }}" target="_blank" class="btn btn-outline-red">{{ file.title  }}</a>
+							</li>
+							{% endfor %}
+							{% else %}
+							Aktuell sind keine Dateien zum Download verfügbar.
+							{% endif %}							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="mitgliedschaft" class="section py-regular bg-lightgray mb-regular">
+		<div class="container">
+			<div class="section-content">
+				<h2 class="section-title">Mitgliedschaft</h2>
+				{{ entry.mitgliedschaft }}
+				<a href="/kontakt" class="btn btn-red text-uppercase">Zum Kontaktforumalr</a>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

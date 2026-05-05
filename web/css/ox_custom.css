@@ -1,0 +1,91 @@
+/* Theme customization starts here
+-------------------------------------------------------------- */
+.ox-memberships-container {
+    background: #C8C8C8 none repeat scroll 0 0;
+}
+
+.ox-memberships {
+    	background-color: #fff !important;
+}
+
+.ox-next, .ox-back{
+    height: 35px;
+    /*padding: 5px 10px;*/
+     background-color: #ed1c24 !important;
+     border-color: #ed1c24 !important;
+     color: #fff !important;
+     padding-top: 0.3125rem;
+     padding-bottom: 0.3125rem;
+     text-transform: uppercase;
+}
+
+.ox-search-form {
+    	margin: 0 0 7px 0;
+	padding: 7px;
+	background-color: rgba(247, 247, 247, 1);
+	height: 50px;
+}
+
+.ox-search-form input, .ox-search-form select {
+    	height: 35px !important;
+	padding: 2px;
+}
+
+#ox-search-membership-type, #ox-search-query, .ox-memberships-submit{
+	float: left;
+	margin-right: 7px;
+}
+
+
+#ox-search-membership-type, #ox-search-query{
+	border-radius: 0px !important;
+}
+
+.ox-memberships-submit{
+    	background-color: #ff0000 !important;
+    	border-radius: 4px !important;
+}
+
+#ox-search-membership-type, #ox-search-query{
+	width: 152px;
+}
+
+#ox-search-membership-type{
+	color: #520000 !important;
+	background-color: #fff;
+}
+
+.ox-search-form select, .ox-search-form input[type="submit"] {
+    height: 35px;
+    /*padding: 5px 10px;*/
+     background-color: #ed1c24;
+     border-color: #ed1c24;
+     color: #fff;
+     padding-top: 0.3125rem;
+     padding-bottom: 0.3125rem;
+     text-transform: uppercase;
+	
+}
+
+.ox-search-form input, .ox-search-form select {
+    	border-radius: 0px;
+}
+
+.ox-membership {
+    min-width: 225px !important;
+}
+
+@media (max-width: 500px) {
+	.ox-memberships-container {
+		width: 100%;
+		margin-left: 7px;
+	}
+	.ox-search-form select, .ox-search-form input[type="submit"] {
+		margin: 10px 0 20px;
+		width: 100%;
+	}
+	#ox-search-membership-type, #ox-search-query {
+		width: 100%;
+		margin: 10px 0px;
+	}
+}

@@ -1,0 +1,25 @@
+{# subject: Anmeldung Aufgetischt #}
+{# fromEmail: aufgetischt@perle-am-see.ch #}
+{# fromName: Gewerbeverein Pfäffikon ZH #}
+{# replyToName:  #}
+{# replyToEmail:  #}
+{# cc:  #}
+{# bcc:  #}
+{# includeAttachments: false #}
+{# presetAssets:  #}
+{# templateName: Anmeldung Aufgetischt #}
+{# description:  #}
+
+<p>Anmeldung Aufgetischt vom: {{ dateCreated|date('d.m.Y \\u\\m H:i:s \\U\\h\\r') }}</p>
+<ul>
+{% for field in allFields %}
+    <li>{{ field.label }}: {{ field.valueAsString }}</li>
+{% endfor %}
+</ul>
+{# text #}
+Anmeldung Aufgetischt vom: {{ dateCreated|date('d.m.Y \\u\\m H:i:s \\U\\h\\r') }}
+
+{% for field in allFields %}
+ - {{ field.label }}: {{ field.valueAsString }}
+{% endfor %}
+{# /text #}

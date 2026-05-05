@@ -1,0 +1,12 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 622079b6-15f6-4e97-aa14-e4b047658f37 # Kontakt
+handle: empfaengerMitgliederanmeldung
+instructions: ''
+name: 'Empfänger Mitgliederanmeldung'
+searchable: true
+settings:
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

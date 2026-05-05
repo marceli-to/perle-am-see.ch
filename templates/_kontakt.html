@@ -1,0 +1,58 @@
+{% extends "_layout" %}
+{% set title = "Kontakt" %}
+
+{% block content %}
+
+	<div class="section py-large">
+		<div class="container">
+			<div class="section-content">
+				<h1 class="section-title">
+					Sie wollen Mitglied
+					<br/>
+					werden oder haben ein 
+					<br/>
+					Anliegen?
+				</h1>
+				
+				{% if craft.app.request.getQueryParam('success') == 1 %}
+				<div class="col-lg-7">
+					<div role="alert" class="alert alert-success row">
+						Vielen Dank, Ihr Formular wurde versendet.
+					</div>
+				</div>
+				{% endif %}
+				
+				{{ entry.inhalt }}
+				<div class="row">
+					<div class="col-lg-7 py-3">
+						<div class="form-group">
+							<select id="kontakt-forms-toggler" class="form-control" name="" placeholder="Bitte wählen Sie einen Betreff aus*">
+								<option value="" selected disabled readonly class="text-uppercase">Bitte wählen Sie einen Betreff aus*</option>
+								<option value="1">Kontakt</option>
+								<option value="2">Mitglied werden</option>
+							</select>
+						</div>
+						<div id="kontakt-forms">
+
+							{% include "kontakt/_form" with { formHandle: 'kontaktformular', id: 'kontakt-form-1',  formAttr: { "style": "" }, recipient: entry.empfaengerKontaktformular } %}
+
+							{% include "kontakt/_form" with { formHandle: 'mitgliedWerden', id: 'kontakt-form-2', formAttr: { "style": "display:none" }, recipient: entry.empfaengerMitgliederanmeldung } %}
+
+						</div>
+					</div>
+				</div>
+
+				<h2 class="section-title mt-regular">
+					Adresse
+				</h2>
+
+				<p>
+					{{ globaleInhalte.adresse|nl2br }}
+					<br/>
+					<a href="mailto:{{ globaleInhalte.eMail }}" class="text-inherit">{{ globaleInhalte.eMail }}</a>
+				</p>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

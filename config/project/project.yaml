@@ -1,0 +1,389 @@
+dateModified: 1777963263
+elementSources:
+  craft\elements\Entry:
+    -
+      key: '*'
+      tableAttributes:
+        - section
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      heading: Einzelseiten
+      type: heading
+    -
+      key: 'single:52bdb826-d094-47f0-b6fb-2a9b3e1b9f84' # Home
+      type: native
+    -
+      key: 'single:2bc8bef1-c2a2-4112-9ae4-1f1e200b865d' # Verein
+      type: native
+    -
+      key: 'single:5a6e1d82-5f84-4fdf-aaa9-68b02ee890eb' # Aktivitäten
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      key: 'single:3a624e5f-edc0-487e-90f0-b31de930e48c' # Agenda
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      key: 'single:9873d9bf-726d-41d9-a164-bc5024fa7cd9' # Mitglieder
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+    -
+      key: 'single:f13545bf-6351-4c8a-aa11-3ca53b8565e1' # Archiv
+      type: native
+    -
+      key: 'single:b099e06b-a68a-4a63-9ff0-1ec5266f5025' # Kontakt
+      type: native
+    -
+      key: 'single:7df9c1d7-d1c1-4f4a-a654-02832744c00c' # Impressum
+      type: native
+    -
+      key: 'single:90fc9697-b486-467c-a4ee-0a00a6b2bd45' # Datenschutz
+      type: native
+    -
+      heading: Module
+      type: heading
+    -
+      key: 'section:2bdc34c3-5e12-4868-a9c7-d8cff85791bc' # Agenda/Aktivitäten
+      tableAttributes:
+        - type
+        - 'field:547227e1-0296-45b7-ad1d-129a6b8b18a3' # Datum von
+        - 'field:eb87ef2c-5742-452c-8a04-8edd48e94cc6' # Datum bis
+        - 'field:9ddebb52-e8d0-4b14-9cb6-12d5bbb32546' # Hauptbild
+        - link
+        - author
+        - postDate
+        - expiryDate
+      type: native
+    -
+      key: 'section:d494a345-91df-48be-8169-a79fd8a913d5' # Werbung
+      tableAttributes:
+        - 'field:42231358-a86a-4b93-8d4e-a7ab9c7e07c0' # Webseite
+        - 'field:a1936044-b475-49da-bdc4-03c0e84e3172' # Banner
+        - postDate
+        - expiryDate
+      type: native
+    -
+      key: 'section:2bee5228-9156-4b89-ba93-efb8fd0324e7' # Vereinsseiten
+      tableAttributes:
+        - postDate
+        - expiryDate
+        - author
+        - link
+      type: native
+email:
+  fromEmail: info@perle-am-see.ch
+  fromName: 'Gewerbeverein Pfäffikon - die Perle am See'
+  replyToEmail: null
+  template: ''
+  transportSettings: null
+  transportType: craft\mail\transportadapters\Sendmail
+fs:
+  dokumente:
+    hasUrls: true
+    name: Dokumente
+    settings:
+      addSubfolderToRootUrl: true
+      bucket: $OBJECT_STORAGE_BUCKET
+      endpoint: $OBJECT_STORAGE_SERVER
+      expires: ''
+      keyId: $OBJECT_STORAGE_KEY
+      makeUploadsPublic: true
+      region: $OBJECT_STORAGE_REGION
+      secret: $OBJECT_STORAGE_SECRET
+      subfolder: dokumente
+    type: fortrabbit\ObjectStorage\Fs
+    url: $CDN_URL
+  header:
+    hasUrls: true
+    name: Header
+    settings:
+      addSubfolderToRootUrl: true
+      bucket: $OBJECT_STORAGE_BUCKET
+      endpoint: $OBJECT_STORAGE_SERVER
+      expires: ''
+      keyId: $OBJECT_STORAGE_KEY
+      makeUploadsPublic: true
+      region: $OBJECT_STORAGE_REGION
+      secret: $OBJECT_STORAGE_SECRET
+      subfolder: header
+    type: fortrabbit\ObjectStorage\Fs
+    url: $CDN_URL
+  impressionen:
+    hasUrls: true
+    name: Impressionen
+    settings:
+      addSubfolderToRootUrl: true
+      bucket: $OBJECT_STORAGE_BUCKET
+      endpoint: $OBJECT_STORAGE_SERVER
+      expires: ''
+      keyId: $OBJECT_STORAGE_KEY
+      makeUploadsPublic: true
+      region: $OBJECT_STORAGE_REGION
+      secret: $OBJECT_STORAGE_SECRET
+      subfolder: impressionen
+    type: fortrabbit\ObjectStorage\Fs
+    url: $CDN_URL
+  logoWall:
+    hasUrls: true
+    name: 'Logo Wall'
+    settings:
+      addSubfolderToRootUrl: true
+      bucket: $OBJECT_STORAGE_BUCKET
+      endpoint: $OBJECT_STORAGE_SERVER
+      expires: ''
+      keyId: $OBJECT_STORAGE_KEY
+      makeUploadsPublic: true
+      region: $OBJECT_STORAGE_REGION
+      secret: $OBJECT_STORAGE_SECRET
+      subfolder: logowall
+    type: fortrabbit\ObjectStorage\Fs
+    url: $CDN_URL
+  werbung:
+    hasUrls: true
+    name: Werbung
+    settings:
+      addSubfolderToRootUrl: true
+      bucket: $OBJECT_STORAGE_BUCKET
+      endpoint: $OBJECT_STORAGE_SERVER
+      expires: ''
+      keyId: $OBJECT_STORAGE_KEY
+      makeUploadsPublic: true
+      region: $OBJECT_STORAGE_REGION
+      secret: $OBJECT_STORAGE_SECRET
+      subfolder: werbung
+    type: fortrabbit\ObjectStorage\Fs
+    url: $CDN_URL
+meta:
+  __names__:
+    0ab0a0c0-31c7-433f-b28a-00610a22e0aa: Aktivität # Aktivität
+    1f53dd55-738b-4dce-a0e2-b287b4aa9b72: Kontakt # Kontakt
+    1f587c44-f094-4840-8d11-f1a42035127f: Impressionen # Impressionen
+    2a8279a9-41f1-46af-afd5-7b2c981facdc: 'Bild "Über den Verein"' # Bild "Über den Verein"
+    2bc8bef1-c2a2-4112-9ae4-1f1e200b865d: Verein # Verein
+    2bdc34c3-5e12-4868-a9c7-d8cff85791bc: Agenda/Aktivitäten # Agenda/Aktivitäten
+    2bee5228-9156-4b89-ba93-efb8fd0324e7: Vereinsseiten # Vereinsseiten
+    3a624e5f-edc0-487e-90f0-b31de930e48c: Agenda # Agenda
+    03f38ad6-a72c-439d-8d5f-f866bbd09bb7: 'Mit Anmeldeformular?' # Mit Anmeldeformular?
+    4d58e5d5-ed7e-4371-85c3-f24d15c071dd: 'Empfänger Kontaktformular' # Empfänger Kontaktformular
+    4e9caaf9-5d24-4e91-8c15-794d67a5a920: Home # Home
+    4f78ed32-3f8f-48e6-8aef-62d9b03e2003: 'Manuelle Anmeldungen' # Manuelle Anmeldungen
+    4fa5eccf-7f47-4388-9073-0424a0aae72a: Header # Header
+    5a6e1d82-5f84-4fdf-aaa9-68b02ee890eb: Aktivitäten # Aktivitäten
+    5a63e5fd-a705-4245-a75d-73bad2a0178a: 'Reiner Agenda-Eintrag' # Reiner Agenda-Eintrag
+    5b8517c0-467f-48c7-8546-df536cc96775: Statuten # Statuten
+    05ff9366-cdbc-4a86-94e3-7c9e99cc9776: Adresse # Adresse
+    7b943c1a-b165-4445-993e-94b466f64b91: Telefon # Telefon
+    7df9c1d7-d1c1-4f4a-a654-02832744c00c: Impressum # Impressum
+    7f27934d-65ba-42ed-a3ce-7485a0e19f12: 'Mit Verpflegungsanmeldung?' # Mit Verpflegungsanmeldung?
+    8d027273-f30c-48b0-bfe2-fe72df5c09ee: 'Gewerbeverein Pfäffikon - die Perle am See' # Gewerbeverein Pfäffikon - die Perle am See
+    9b996d1a-cfff-4810-8bc6-3fef324ceecc: Aktivitäten # Aktivitäten
+    9d4e1350-8766-452b-9bdf-627df90fe9ef: Titel # Titel
+    9ddebb52-e8d0-4b14-9cb6-12d5bbb32546: Hauptbild # Hauptbild
+    14f5f2d0-6766-4aa4-9483-8a595c430aea: 'Max Anzahl Teilnehmer' # Max Anzahl Teilnehmer
+    23f51a77-d65f-442f-b42d-6229758ea6d5: Impressionen # Impressionen
+    28e12b3c-b907-40b1-821b-1814a39e2055: Werbung # Werbung
+    37eb68f0-901f-4fe5-8e2a-a306043a2c44: Werbung # Werbung
+    50e2d344-3fd1-4402-ac81-e980c96e44fd: 'Logo Wall' # Logo Wall
+    52bdb826-d094-47f0-b6fb-2a9b3e1b9f84: Home # Home
+    62e32682-09a7-4ee1-944c-d625f657bd63: 'Public Schema' # Public Schema
+    76f10424-ce3c-4765-9cf8-3bb736a928bb: Mitgliedschaft # Mitgliedschaft
+    082ad13f-f236-4f64-9c39-e68ef38a0bdd: Verein # Verein
+    83ac917a-7b56-4cc0-8117-026d1c05f4e1: Agenda # Agenda
+    90fc9697-b486-467c-a4ee-0a00a6b2bd45: Datenschutz # Datenschutz
+    348b2e45-e1d8-490c-ba54-29bc0449b161: Home # Home
+    666c4f42-d883-4c52-8140-471291f8ca5a: Impressum # Impressum
+    913e3d0e-2ba6-44f2-98a0-f56a212bbd34: Ort # Ort
+    1284ef47-40f2-4a34-bcce-65fbed0143e5: 'Gewerbeverein Pfäffikon - die Perle am See' # Gewerbeverein Pfäffikon - die Perle am See
+    1531bfd4-fd78-45bc-b589-5f3aa810cba0: 'E-Mail Adresse für Anmeldungen' # E-Mail Adresse für Anmeldungen
+    1668a20d-1acd-4c5f-99f3-faf4b93812cd: 'Logo Wall 3' # Logo Wall 3
+    5107c529-12ab-40ed-9c4f-624de9ea22ba: Werbung # Werbung
+    5256b2a0-43ac-4e1c-963f-4d069b042f83: Vereinsseiten # Vereinsseiten
+    8798b59a-7c0a-43c6-9e04-07178e6b0b12: 'Beteiligte Geschäfte' # Beteiligte Geschäfte
+    9873d9bf-726d-41d9-a164-bc5024fa7cd9: Mitglieder # Mitglieder
+    50395f05-4c12-48e1-a4f7-8515f3aebd6f: Mitglieder # Mitglieder
+    68240a16-5b41-4bce-b08f-380c9ebb0ecc: 'Hauptbild Anlässe' # Hauptbild Anlässe
+    69357f67-ef89-46a4-aa7c-59d72f7e3da3: Dateien # Dateien
+    83614ff9-3bb6-4736-81b7-9efa4ae357ec: Bemerkungen # Bemerkungen
+    123307db-b419-4d87-a825-2f8074ac809f: 'Mitglied werden' # Mitglied werden
+    283701df-25fb-4029-8398-1a1d4f4565bc: Dokumente # Dokumente
+    547227e1-0296-45b7-ad1d-129a6b8b18a3: 'Datum von' # Datum von
+    622079b6-15f6-4e97-aa14-e4b047658f37: Kontakt # Kontakt
+    746354ba-a01a-4f0e-b528-912e33bb6d72: Adventstürli # Adventstürli
+    852190f5-7369-4e1b-8089-2fceddf75241: Archiv # Archiv
+    984957d8-880a-445c-be5e-3e17256af15e: 'Pfäffiker Taler' # Pfäffiker Taler
+    42231358-a86a-4b93-8d4e-a7ab9c7e07c0: Webseite # Webseite
+    a4b69b55-795a-4624-9c8c-2c4ccc5c6eef: Globals # Globals
+    a6e7f40a-a009-49cc-ad33-1e477251fee1: Datenschutz # Datenschutz
+    a79b47ce-9077-4b85-96f7-10774dd291d3: Aufgetischt # Aufgetischt
+    a1573f1c-6a83-4516-8f2d-e25ecd9f32aa: 'Mit Abmeldeformular?' # Mit Abmeldeformular?
+    a94217c2-4fd2-44c8-874b-9cdc5e3681e7: Protokolle # Protokolle
+    a1936044-b475-49da-bdc4-03c0e84e3172: Banner # Banner
+    aa145071-9dc9-4737-b36f-b1f1cfcec0ae: Common # Common
+    ab183d86-e328-46ea-9f2c-1d647204c15c: Link # Link
+    b099e06b-a68a-4a63-9ff0-1ec5266f5025: Kontakt # Kontakt
+    b15a5634-281a-48fa-a5c2-774757d0a092: 'Logo Wall 2' # Logo Wall 2
+    ba669fd8-d8c0-44f1-8ab6-72374ae8cc7d: 'Impressionen Thumbs' # Impressionen Thumbs
+    beb7483f-b766-4081-ae18-00f336fe9139: Verein # Verein
+    c1a8d800-53d8-4ef1-ab9a-a0cbe0c74497: Inhalt # Inhalt
+    c30d3461-c9a9-4348-aeec-0d71c56cee47: Résumé # Résumé
+    c725b0cf-b864-43f3-820e-8a0e1e7554eb: Kunden # Kunden
+    ca0ba777-5501-49aa-bafa-d63ae2deb5c6: 'Anzahl pro Firma' # Anzahl pro Firma
+    ca13a879-2b50-433e-be79-c06167807fc6: Agenda # Agenda
+    cd759a45-700d-4983-952f-61e42f7845fa: Anmeldefrist # Anmeldefrist
+    d3b2ce18-ffb5-4902-aad4-1d755ac580b5: Facebook # Facebook
+    d494a345-91df-48be-8169-a79fd8a913d5: Werbung # Werbung
+    d977cb46-ca4e-46f1-b2be-8246078b4896: 'Hintergrundbild "Mitglied werden"' # Hintergrundbild "Mitglied werden"
+    d7678a2c-b1ac-4f66-b383-c926b8fa2824: 'Impressionen Lightbox' # Impressionen Lightbox
+    da730886-0c4c-44a5-807f-cd12ade7b056: 'Empfänger Mitgliederanmeldung' # Empfänger Mitgliederanmeldung
+    e1ecfa81-25e9-42a1-8206-1bdcdeeb4ae3: 'Globale Inhalte' # Globale Inhalte
+    eaf54c2d-c6f9-431b-b5ba-213f1e5057bf: Allgemeines # Allgemeines
+    eb87ef2c-5742-452c-8a04-8edd48e94cc6: 'Datum bis' # Datum bis
+    ec56d47b-26f3-4047-805a-729f44d56c6b: Werbung # Werbung
+    ece69c20-e9b9-4c5a-afd0-af0142717b1f: 'Header Bild' # Header Bild
+    ed0bb4d4-dc8a-442e-a980-df1438a5cb2b: Kosten # Kosten
+    eeaddc0e-c672-41d0-9dfc-12e3d1215837: 'Über den Verein' # Über den Verein
+    f5e4b89e-ec81-462f-8f83-16126d8fe0f4: 'Logo Wall' # Logo Wall
+    f7beb1f9-c727-4484-a833-9a0e21aba9d7: Adventstürli-Kalender # Adventstürli-Kalender
+    f13545bf-6351-4c8a-aa11-3ca53b8565e1: Archiv # Archiv
+    fb55ae02-e0ba-4ddb-bee3-2a3144202035: Mitglieder # Mitglieder
+    fbdbab6e-cdc6-47ec-95f2-c81bfc139bbd: E-Mail # E-Mail
+    fbde6706-53ad-46d1-8591-06c0ec43255e: Vorstand # Vorstand
+    fdbbfefd-22b1-47c2-b04e-7561bea7ac96: 'Teaser Text' # Teaser Text
+plugins:
+  expanded-singles:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      expandSingles: '1'
+      redirectToEntry: '1'
+  feed-me:
+    edition: standard
+    enabled: false
+    schemaVersion: 2.1.2
+  fortrabbit-object-storage:
+    edition: standard
+    enabled: true
+    schemaVersion: '2.0'
+  freeform:
+    edition: pro
+    enabled: true
+    licenseKey: 731XOOB2TQKFWIH7AMPNA701
+    schemaVersion: 4.2.8
+    settings:
+      ajaxByDefault: ''
+      alertNotificationRecipients: null
+      allowFileTemplateEdit: '1'
+      autoScroll: true
+      autoScrollToErrors: '1'
+      badgeType: all
+      blockedEmails: ''
+      blockedEmailsError: 'Invalid Email Address'
+      blockedIpAddresses: ''
+      blockedKeywords: ''
+      blockedKeywordsError: 'Invalid Entry Data'
+      bypassSpamCheckOnLoggedInUsers: false
+      clientDigestFrequency: 1
+      clientDigestRecipients: null
+      customErrorMessage: ''
+      customHoneypotName: ffhph
+      defaultTemplates: '1'
+      defaultView: dashboard
+      digestFrequency: 1
+      digestOnlyOnProduction: false
+      digestRecipients: null
+      displayFeed: true
+      emailTemplateDefault: files
+      emailTemplateDirectory: _freeform/notifications
+      emailTemplateStorageType: files_database
+      exportHandlesAsNames: false
+      exportLabels: false
+      fieldDisplayOrder: name
+      fillWithGet: ''
+      footerScripts: false
+      formFieldShowOnlyAllowedForms: false
+      formSubmitDisable: '1'
+      formSubmitExpiration: ''
+      formTemplateDirectory: null
+      formattingTemplate: flexbox.twig
+      freeformHoneypot: '1'
+      freeformHoneypotEnhancement: '1'
+      hideBannerDemo: '1'
+      hideBannerOldFreeform: false
+      minimumSubmitTime: ''
+      pluginName: Formulare
+      purgableSpamAgeInDays: '0'
+      purgableSubmissionAgeInDays: '0'
+      purgableUnfinalizedAssetAgeInMinutes: 180
+      recaptchaBehaviour: display_error
+      recaptchaEnabled: false
+      recaptchaErrorMessage: 'Please verify that you are not a robot.'
+      recaptchaKey: null
+      recaptchaLazyLoad: false
+      recaptchaMinScore: 0.5
+      recaptchaSecret: null
+      recaptchaSize: normal
+      recaptchaTheme: light
+      recaptchaType: v2_checkbox
+      rememberPageSubmitOrder: true
+      removeNewlines: ''
+      renderFormHtmlInCpViews: '1'
+      salesforce_client_id: null
+      salesforce_client_secret: null
+      salesforce_password: null
+      salesforce_username: null
+      saveFormSessionLimit: 10
+      saveFormTtl: 30
+      scriptInsertLocation: footer
+      scriptInsertType: pointers
+      sessionContext: payload
+      sessionContextCount: 100
+      sessionContextSecret: ''
+      sessionContextTimeToLiveMinutes: 180
+      sessionEntryMaxCount: 50
+      sessionEntryTTL: 10800
+      showErrorsForBlockedEmails: ''
+      showErrorsForBlockedKeywords: ''
+      showTutorial: ''
+      spamFolderEnabled: ''
+      spamProtectionBehaviour: simulate_success
+      submissionThrottlingCount: ''
+      submissionThrottlingTimeFrame: m
+      successTemplateDirectory: null
+      twigInHtml: '1'
+      twigInHtmlIsolatedMode: '1'
+      updateSearchIndexes: true
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+  typedlinkfield:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.0.0
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+system:
+  edition: pro
+  live: true
+  name: 'Gewerbeverein Pfäffikon - die Perle am See'
+  schemaVersion: 4.17.0.3
+  timeZone: America/Los_Angeles

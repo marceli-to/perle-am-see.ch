@@ -1,0 +1,27 @@
+{% if bgClass is not defined %}
+{% set bgClass = 'bg-lightgray' %}
+{% endif %}
+<div class="section py-regular {{ bgClass }} mb-regular">
+    <div class="container">
+        <div class="section-content">
+            <h2 class="section-title">Impressionen</h2>
+            <div class="row">
+                {% if entry.impressionen|length %}
+                    {% for pic in entry.impressionen.all() %}
+
+                        <div class="col-sm-6 col-lg-3">
+                            <a href="{{ pic.getUrl('impressionen_large') }}" data-toggle="lightbox" data-title="" data-gallery="activities-gallery" class="d-block mb-small">
+                                <img src="{{ pic.getUrl('impressionenThumbs') }}" class="w-100"/>
+                            </a>
+                        </div>
+
+                    {% endfor %}
+                {% else %}
+                    <div class="col-lg-12">
+                        <p>Aktuell stehen keine Bilder zur Verfügung.</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+fieldLayouts:
+  9e7e3bb2-1155-458a-a853-d3f8bee60275:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fs: dokumente
+handle: dokumente
+hasUrls: true
+name: Dokumente
+sortOrder: 1
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+url: '@web/assets/dokumente'

@@ -1,0 +1,38 @@
+fieldLayouts:
+  b56eaa87-aadc-4a60-9b35-c45ebb094845:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fs: impressionen
+handle: impressionen
+hasUrls: true
+name: Impressionen
+sortOrder: 2
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+url: '@web/assets/impressionen'

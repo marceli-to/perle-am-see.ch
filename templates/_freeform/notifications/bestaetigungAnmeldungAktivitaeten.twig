@@ -1,0 +1,41 @@
+{# subject: Bestätigung Anmeldung ({{ aktivitaet }}) #}
+{# fromEmail: info@perle-am-see.ch #}
+{# fromName: Gewerbeverein Pfäffikon ZH #}
+{# replyToName:  #}
+{# replyToEmail: info@perle-am-see.ch #}
+{# cc:  #}
+{# bcc:  #}
+{# includeAttachments: false #}
+{# presetAssets:  #}
+{# templateName: Bestätigung Anmeldung Aktivitäten #}
+{# description: Anmelde-Bestätigung für Ausfüller des Formulars #}
+
+<p>Sehr geehrtes Gewerbeverein-Mitglied</p>
+<p>Herzlichen Dank für das Interesse und deine Anmeldung.</p>
+<p>Anmeldung vom: {{ dateCreated|date('d.m.Y \\u\\m H:i:s \\U\\h\\r') }}</p>
+<ul>
+{% for field in allFields %}
+    <li>{{ field.label }}: {{ field.valueAsString }}</li>
+{% endfor %}
+</ul>
+<p>Wir freuen uns, dich am Event zu begrüssen.</p>
+<p>Freundliche Grüsse<br>
+Der Gewerbeverein Pfäffikon<br>
+info@perle-am-see.ch</p>
+{# text #}
+Sehr geehrtes Gewerbeverein-Mitglied
+
+Herzlichen Dank für das Interesse und deine Anmeldung.
+
+Anmeldung vom: {{ dateCreated|date('d.m.Y \\u\\m H:i:s \\U\\h\\r') }}
+
+{% for field in allFields %}
+ - {{ field.label }}: {{ field.valueAsString }}
+{% endfor %}
+
+Wir freuen uns, dich am Event zu begrüssen. 
+
+Freundliche Grüsse
+Der Gewerbeverein Pfäffikon
+info@perle-am-see.ch
+{# /text #}

@@ -1,0 +1,180 @@
+{% set navactive = "" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/ekko-lightbox.css">
+
+    <link rel="stylesheet" href="/css/style.css?v=2.0">
+    <link rel="stylesheet" href="/css/ox_custom.css?v=1.1">
+	<title>{% if craft.app.request.segments|first == "" %}Gewerbeverein Pfäffikon ZH - Die Perle am See{%else%}{% if title is defined %}{{ title }} - {%else%}{{ entry.title is defined and entry.title is not empty ? entry.title : ''}}{% endif %} Gewerbeverein Pfäffikon ZH{% endif %}</title>
+	{{ craft.vite.script("src/js/app.js") }}
+</head>
+<body>
+{% set env = craft.app.config.env %}
+{% if env == 'production' %}
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3QXX41Z2SM"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-3QXX41Z2SM', { 'anonymize_ip': true });
+</script>
+{% endif %}
+
+	<div class="navbar navbar-expand-lg" id="navbar">
+		<div class="container">
+			<a class="navbar-brand" href="/">
+				<img src="/images/logo.png">
+				<img src="/images/logo-mini.png">
+			</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-bar"></span>
+			    <span class="navbar-toggler-bar"></span>
+			    <span class="navbar-toggler-bar"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item {% if craft.app.request.segments|first == 'verein' %}active{% endif %}">
+						<a class="nav-link" href="/verein">Verein</a>
+						<ul class="nav-subnav">
+							<li>
+								<a href="/verein#ueber-den-verein">Über den Verein</a>
+							</li>
+
+							<li>
+								<a href="/verein#vorstand">Vorstand</a>
+							</li>
+
+							<li>
+								<a href="/verein#dokumente">Dokumente</a>
+							</li>
+
+							<li>
+								<a href="/verein#mitgliedschaft">Mitgliedschaft</a>
+							</li>
+							{% for vereinsNav in craft.entries.section('vereinsseiten').all() %}
+							<li>
+								<a href="{{ vereinsNav.url }}">{{ vereinsNav.title }}</a>
+							</li>
+							{% endfor %}
+						</ul>
+					</li>
+					<li class="nav-item {% if craft.app.request.segments|first == 'aktivitaeten' %}active{% endif %}">
+						<a class="nav-link" href="/aktivitaeten">Aktivitäten</a>
+					</li>
+					<li class="nav-item {% if craft.app.request.segments|first == 'agenda' %}active{% endif %}">
+						<a class="nav-link" href="/agenda">Agenda</a>
+					</li>
+					<li class="nav-item {% if craft.app.request.segments|first == 'mitglieder' %}active{% endif %}">
+						<a class="nav-link" href="/mitglieder">Mitglieder</a>
+					</li>
+					<li class="nav-item {% if craft.app.request.segments|first == 'archiv' %}active{% endif %}">
+						<a class="nav-link" href="/archiv">Archiv</a>
+						<ul class="nav-subnav">
+						{% cache %}
+							{% set pastEventsAll = craft.entries.section('agenda').type('aktivitaet').limit(null).orderBy('datumVon DESC').all() %}
+							{% for date, pastEvents in pastEventsAll | group("datumVon|date('Y')") %}
+								<li class="{% if craft.app.request.getSegment(2) == date %}active{% endif %}">
+									<a href="/archiv/{{ date }}">{{ date }}</a>
+								</li>
+							{% endfor %}
+						{% endcache %}
+						</ul>
+					</li>
+					<li class="nav-item {% if craft.app.request.segments|first == 'kontakt' %}active{% endif %}">
+						<a class="nav-link" href="/kontakt">Kontakt</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	{% block content %}{% endblock %}
+
+	<div class="section py-small">
+		<dir class="container">
+			<div class="row">
+				{% set werbungen = craft.entries.section('werbung').orderBy('RAND()').limit(3).all() %}
+				{% for werbung in werbungen %}
+					{#% set webseite = werbung.webseite|replace({'https': '', 'http': '', '://' : '', ':/' : '', ':' : '', 'www.' : ''}) %#}
+					{% if werbung.banner|length %}
+					<div class="col-lg-4 py-small">
+						<a href="{{ werbung.webseite }}" target="_blank">
+							<img src="{{ werbung.banner.one().getUrl('bannerWerbung') }}" class="w-100 mx-auto" />
+						</a>
+					</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+		</dir>
+	</div>
+
+	<div class="footer bg-lightgray py-regular">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3">
+					<h4 class="footer-title">Folgen</h4>
+					<ul class="footer-social">
+						<li>
+							<a target="_blank" href="{{ globaleInhalte.facebook }}">
+								<img src="/images/facebook.png" />
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-9">
+					<h4 class="footer-title">KONTAKT</h4>
+					<div class="row">
+						<div class="col-lg-6">
+							{{ globaleInhalte.adresse|nl2br }}
+							<br/>
+							<a href="mailto:{{ globaleInhalte.eMail }}">{{ globaleInhalte.eMail }}</a>
+						</div>
+
+						<div class="col-lg-3">
+							<ul class="footer-links">
+								<li>
+									<a href="/agenda">Agenda</a>
+								</li>
+								<li>
+									<a href="/mitglieder">Mitglieder</a>
+								</li>
+								<li>
+									<a href="/aktivitaeten">Aktivitäten</a>
+								</li>
+							</ul>
+						</div>
+
+						<div class="col-lg-3">
+							<ul class="footer-links">
+								<li>
+									<a href="/impressum">Impressum</a>
+								</li>
+								<li>
+									<a href="/datenschutz">Datenschutz</a>
+								</li>
+								<li>
+									<a target="_blank" href="http://stoz.ch">design by stoz</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="/js/jquery-3.4.1.min.js"></script>
+	<script src="/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/ekko-lightbox.min.js"></script>
+	<script src="/js/script.js?v1.4"></script>
+</body>
+</html>

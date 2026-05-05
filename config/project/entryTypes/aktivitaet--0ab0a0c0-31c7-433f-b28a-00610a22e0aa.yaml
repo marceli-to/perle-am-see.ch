@@ -1,0 +1,204 @@
+fieldLayouts:
+  aaf178c4-9dac-4600-a8c7-bfb2226b5448:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 9ddebb52-e8d0-4b14-9cb6-12d5bbb32546 # Hauptbild
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fdbbfefd-22b1-47c2-b04e-7561bea7ac96 # Teaser Text
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: c1a8d800-53d8-4ef1-ab9a-a0cbe0c74497 # Inhalt
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 547227e1-0296-45b7-ad1d-129a6b8b18a3 # Datum von
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: eb87ef2c-5742-452c-8a04-8edd48e94cc6 # Datum bis
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 913e3d0e-2ba6-44f2-98a0-f56a212bbd34 # Ort
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ed0bb4d4-dc8a-442e-a980-df1438a5cb2b # Kosten
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: cd759a45-700d-4983-952f-61e42f7845fa # Anmeldefrist
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 14f5f2d0-6766-4aa4-9483-8a595c430aea # Max Anzahl Teilnehmer
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ca0ba777-5501-49aa-bafa-d63ae2deb5c6 # Anzahl pro Firma
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 4f78ed32-3f8f-48e6-8aef-62d9b03e2003 # Manuelle Anmeldungen
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 83614ff9-3bb6-4736-81b7-9efa4ae357ec # Bemerkungen
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 03f38ad6-a72c-439d-8d5f-f866bbd09bb7 # Mit Anmeldeformular?
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a1573f1c-6a83-4516-8f2d-e25ecd9f32aa # Mit Abmeldeformular?
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 7f27934d-65ba-42ed-a3ce-7485a0e19f12 # Mit Verpflegungsanmeldung?
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1531bfd4-fd78-45bc-b589-5f3aa810cba0 # E-Mail Adresse für Anmeldungen
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Agenda
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: c30d3461-c9a9-4348-aeec-0d71c56cee47 # Résumé
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1f587c44-f094-4840-8d11-f1a42035127f # Impressionen
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: 'Impressionen  & Résumé'
+        sortOrder: 2
+handle: aktivitaet
+hasTitleField: true
+name: Aktivität
+section: 2bdc34c3-5e12-4868-a9c7-d8cff85791bc # Agenda/Aktivitäten
+sortOrder: 2
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

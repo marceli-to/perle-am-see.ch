@@ -1,0 +1,47 @@
+fieldLayouts:
+  95ace6d7-f6a8-4731-99bd-0198e77fa4c9:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: c1a8d800-53d8-4ef1-ab9a-a0cbe0c74497 # Inhalt
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Common
+        sortOrder: 1
+handle: archiv
+hasTitleField: false
+name: Archiv
+section: f13545bf-6351-4c8a-aa11-3ca53b8565e1 # Archiv
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

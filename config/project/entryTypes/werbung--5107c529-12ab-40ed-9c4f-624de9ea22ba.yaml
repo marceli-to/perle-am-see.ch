@@ -1,0 +1,56 @@
+fieldLayouts:
+  32f000ab-7234-46a5-ad39-ccc1da5ebd40:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 42231358-a86a-4b93-8d4e-a7ab9c7e07c0 # Webseite
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a1936044-b475-49da-bdc4-03c0e84e3172 # Banner
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Werbung
+        sortOrder: 1
+handle: werbung
+hasTitleField: false
+name: Werbung
+section: d494a345-91df-48be-8169-a79fd8a913d5 # Werbung
+sortOrder: 1
+titleFormat: '{ webseite|replace({''https'': '''', ''http'': '''', ''://'' : '''', '':/'' : '''', '':'' : '''', ''www.'' : ''''}) }'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

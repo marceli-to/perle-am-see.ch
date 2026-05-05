@@ -1,0 +1,121 @@
+{% extends "_layout" %}
+{% set title = "Agenda" %}
+
+{% block content %}
+
+	{% if entry.headerBild|length %}
+	<div class="banner" style="background-image: url({{ entry.headerBild.one().getUrl() }});"></div>
+	{% endif %}
+
+	<div class="section py-large">
+		<div class="container">
+			<div class="section-content">
+				<h1 class="section-title">Agenda</h1>
+				{{ entry.inhalt }}
+
+				<h3 class="text-red mb-3 mt-regular">Kommende Aktivitäten</h3>
+
+				<div class="div-table">
+
+					{% set postDateParam = '>= ' ~ now|date("Y-m-d")|atom %}
+					{% set nextEvents = craft.entries.section('agenda').datumBis(postDateParam).orderBy('datumVon ASC') %}
+
+					{% if nextEvents|length == 0 %}
+						<p>Keine künftige Aktivität zur Anzeige verfügbar.</p>
+					{% else %}
+
+						{% for nextEvent in nextEvents.all() %}
+						<div class="row div-table-row bg-lightgray">
+							<div class="col-lg-4">
+								{{ nextEvent.title }}
+							</div>
+							<div class="col-lg-2">
+								{{ nextEvent.datumVon|date("d. F Y") }}
+							</div>
+							<div class="col-lg-2">
+								{% if nextEvent.datumVon|date("H:i") != '00:00' %}
+								{{ nextEvent.datumVon|date("H:i") }} Uhr
+								{% endif %}
+							</div>
+							<div class="col-lg-2">
+								{{ nextEvent.ort }}
+							</div>
+							<div class="col-lg-2 no-gutters">
+								{% if nextEvent.type == 'aktivitaet' %}
+								<a href="/{{ nextEvent.uri}}" class="col-sm-12 text-red">{{ nextEvent.mitAnmeldeformular == 1 ? 'Anmeldung' : 'Details' }}</a>
+								{% elseif nextEvent.type == 'reinerAgendaEintrag' and nextEvent.internallink.isEmpty() == false %}
+								<a href="{{ nextEvent.internallink}}" target="_blank" rel="noopener noreferrer" class="col-sm-12 text-red">{{ nextEvent.internallink.getCustomText() }}</a>
+								{% endif %}
+
+								{% if nextEvent.type == 'aktivitaet' and nextEvent.mitAbmeldeformular == 1 %}
+								<a href="/{{ nextEvent.uri}}?submissiontype=abmeldung" class="col-sm-12 text-red">Absage</a>
+								{% endif %}
+							</div>
+
+						</div>
+						{% endfor %}
+
+					{% endif %}
+
+				</div>
+
+				<h3 class="text-red mb-3 mt-regular">Vergangene Aktivitäten</h3>
+
+				<div class="div-table">
+
+					{% set bisPostDateParam = '< ' ~ now|date("Y-m-d 23:59")|atom %}
+					{% set vonPostDateParam = '>= ' ~ now|date_modify('-1 year')|atom %}
+					{% set pastEvents = craft.entries.section('agenda').datumVon(vonPostDateParam).datumBis(bisPostDateParam).orderBy('datumVon ASC') %}
+
+					{% if pastEvents|length == 0 %}
+						<p>Keine vergangenen Aktivität zur Anzeige verfügbar.</p>
+					{% else %}
+
+						{% for pastEvent in pastEvents.all() %}
+						<div class="row div-table-row bg-lightgray">
+							<div class="col-lg-4">
+								{{ pastEvent.title }}
+							</div>
+							<div class="col-lg-2">
+								{{ pastEvent.datumVon|date("d. F Y") }}
+							</div>
+							<div class="col-lg-2">
+								{% if pastEvent.datumVon|date("H:i") != '00:00' %}
+								{{ pastEvent.datumVon|date("H:i") }} Uhr
+								{% endif %}
+							</div>
+							<div class="col-lg-2">
+								{{ pastEvent.ort }}
+							</div>
+							<div class="col-lg-2">
+								{% if pastEvent.type == 'aktivitaet' %}
+								<a href="/{{ pastEvent.uri}}" class="text-red">Bericht</a>
+								{% endif %}
+							</div>
+						</div>
+						{% endfor %}
+
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% set mitgliedWerden = craft.entries.section('home').one() %}
+	<div class="section section-with-background text-white py-medium mt-regular" style="background-image: url({{ mitgliedWerden.hintergrundbildMitgliedWerden.one().getUrl() }});">
+		<div class="container">
+			<div class="row align-items-center">
+				<div class="col-lg-5 py-3 text-center">
+					<img src="/images/uber-den-verein-icon.png">
+				</div>
+
+				<div class="col-lg-7 py-3">
+					<h2 class="section-title">Mitglied werden</h2>
+					{{ mitgliedWerden.mitgliedWerden }}
+					<a href="/kontakt" class="btn btn-red text-uppercase">Zum Kontaktformular</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,74 @@
+fieldLayouts:
+  849d5594-2542-4cf7-b48c-ecc8489c8cb6:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 547227e1-0296-45b7-ad1d-129a6b8b18a3 # Datum von
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: eb87ef2c-5742-452c-8a04-8edd48e94cc6 # Datum bis
+            instructions: null
+            label: null
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 913e3d0e-2ba6-44f2-98a0-f56a212bbd34 # Ort
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: ab183d86-e328-46ea-9f2c-1d647204c15c # Link
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Agenda
+        sortOrder: 1
+handle: reinerAgendaEintrag
+hasTitleField: true
+name: 'Reiner Agenda-Eintrag'
+section: 2bdc34c3-5e12-4868-a9c7-d8cff85791bc # Agenda/Aktivitäten
+sortOrder: 1
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,0 +1,19 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: 28e12b3c-b907-40b1-821b-1814a39e2055 # Werbung
+handle: webseite
+instructions: 'Bitte mit http(s):// eingeben'
+name: Webseite
+searchable: true
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: text
+  initialRows: '4'
+  multiline: ''
+  placeholder: 'http://....'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

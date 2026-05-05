@@ -1,0 +1,14 @@
+columnSuffix: null
+contentColumnType: boolean
+fieldGroup: 83ac917a-7b56-4cc0-8117-026d1c05f4e1 # Agenda
+handle: mitAnmeldeformular
+instructions: 'Soll ein Anmeldeformular angezeigt werden?'
+name: 'Mit Anmeldeformular?'
+searchable: true
+settings:
+  default: true
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

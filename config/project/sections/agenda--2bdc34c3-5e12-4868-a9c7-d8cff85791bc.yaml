@@ -1,0 +1,21 @@
+defaultPlacement: end
+enableVersioning: true
+handle: agenda
+name: Agenda/Aktivitäten
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+propagationMethod: all
+siteSettings:
+  1284ef47-40f2-4a34-bcce-65fbed0143e5: # Gewerbeverein Pfäffikon - die Perle am See
+    enabledByDefault: true
+    hasUrls: true
+    template: events/_entry
+    uriFormat: 'aktivitaeten/{slug}'
+type: channel

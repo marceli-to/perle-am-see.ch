@@ -1,0 +1,20 @@
+{% extends "_layout" %}
+{% set title = entry.title %}
+
+{% block content %}
+
+	{% if entry.headerBild|length %}
+	<div class="banner" style="background-image: url({{ entry.headerBild.one().getUrl() }});"></div>
+	{% endif %}
+	
+	<div class="section py-regular">
+		<div class="container">
+			<div class="section-content">
+				<h1 class="section-title">{{ entry.title }}</h1>
+				<script src="https://www.privacybee.ch/widget.js"></script>
+				<privacybee-widget website-id="cllqj1tx95776220wwqe7trird" lang="de"></privacybee-widget>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

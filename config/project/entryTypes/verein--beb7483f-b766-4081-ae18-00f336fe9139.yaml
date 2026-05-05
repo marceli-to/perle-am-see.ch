@@ -1,0 +1,118 @@
+fieldLayouts:
+  250a51be-a09a-4d09-bc97-1f6ebe384a9e:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: ece69c20-e9b9-4c5a-afd0-af0142717b1f # Header Bild
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: eeaddc0e-c672-41d0-9dfc-12e3d1215837 # Über den Verein
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fbde6706-53ad-46d1-8591-06c0ec43255e # Vorstand
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 76f10424-ce3c-4765-9cf8-3bb736a928bb # Mitgliedschaft
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Verein
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 69357f67-ef89-46a4-aa7c-59d72f7e3da3 # Dateien
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 5b8517c0-467f-48c7-8546-df536cc96775 # Statuten
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a94217c2-4fd2-44c8-874b-9cdc5e3681e7 # Protokolle
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: eaf54c2d-c6f9-431b-b5ba-213f1e5057bf # Allgemeines
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            style: tip
+            tip: "Tipp:\r\nAuf der Webseite wird der Titel der Datei angezeigt (z.B. \"GV GVP 2019\"). Der Titel kann durch Doppelklick auf die Datei geändert werden (Feld: Titel)."
+            type: craft\fieldlayoutelements\Tip
+        name: Dokumente
+        sortOrder: 2
+handle: verein
+hasTitleField: false
+name: Verein
+section: 2bc8bef1-c2a2-4112-9ae4-1f1e200b865d # Verein
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

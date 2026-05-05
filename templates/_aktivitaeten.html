@@ -1,0 +1,106 @@
+{% extends "_layout" %}
+{% set title = "Aktivitäten" %}
+
+{% block content %}
+
+	{% if entry.headerBild|length %}
+	<div class="banner" style="background-image: url({{ entry.headerBild.one().getUrl() }});"></div>
+	{% endif %}
+
+	<div class="section py-large">
+		<div class="container">
+			<div class="section-content">
+				<h1 class="section-title">Aktivitäten</h1>
+				{{ entry.inhalt }}
+
+				<h3 class="text-red mt-regular">Kommende Aktivitäten</h3>
+				<ul class="activities-list activities-list-alt">
+				
+					{% set postDateParam = '>= ' ~ now|date("Y-m-d")|atom %}
+					{% set nextEvents = craft.entries.section('agenda').type('aktivitaet').datumBis(postDateParam).orderBy('datumVon ASC') %}
+					
+					{% if nextEvents|length == 0 %}
+						<p>Keine künftige Aktivität zur Anzeige verfügbar.</p>
+					{% else %}
+					
+						{% for nextEvent in nextEvents.all() %}
+						<li class="activities-item">
+							<div class="activities-item-image">
+								{% if nextEvent.hauptbild|length %}
+								<img src="{{ nextEvent.hauptbild.one().getUrl('hauptbildAnlaesse') }}" />
+								{% endif %}
+							</div>
+
+							<div class="activities-item-details">
+								<div class="activities-item-contents">
+									<h3 class="activities-item-title">{{ nextEvent.title }}</h3>
+									
+									{% if nextEvent.datumVon|date("Y-m-d") == nextEvent.datumBis|date("Y-m-d") %}
+										{% set dateString = nextEvent.datumVon|date("d. F Y") %}
+									{% else %}
+										{% set dateString = nextEvent.datumVon|date("d.") ~ " bis " ~ nextEvent.datumBis|date("d. F Y") %}
+									{% endif %}								
+									<p class="activities-item-date">{{ dateString }}</p>
+									<p class="activities-item-excerpt">
+										{{ nextEvent.teaserText|nl2br }}
+									</p>
+								</div>
+
+								<a href="/{{ nextEvent.uri}}" class="btn btn-red activities-item-btn">Anmeldung</a>
+
+								{% if nextEvent.mitAbmeldeformular == 1 %}
+								<div class="mb-2 col-sm-12 d-block d-sm-none"></div>
+								<div class="ml-2 d-none d-sm-block"></div>
+								<a href="/{{ nextEvent.uri}}?submissiontype=abmeldung" class="btn btn-red activities-item-btn">Absage</a>
+								{% endif %}
+							</div>
+						</li>
+						{% endfor %}					
+					{% endif %}
+				</ul>
+				
+				<h3 class="text-red mt-huge">Vergangene Aktivitäten</h3>
+				<ul class="activities-list">
+				
+					{% set bisPostDateParam = '< ' ~ now|date("Y-m-d 23:59")|atom %}
+					{% set vonPostDateParam = '>= ' ~ now|date_modify('-1 year')|atom %}
+					{% set pastEvents = craft.entries.section('agenda').type('aktivitaet').datumVon(vonPostDateParam).datumBis(bisPostDateParam).orderBy('datumVon DESC') %}				
+					
+					{% if pastEvents|length == 0 %}
+						<p>Keine vergangenen Aktivität zur Anzeige verfügbar.</p>
+					{% else %}
+					
+						{% for pastEvent in pastEvents.all() %}
+						<li class="activities-item">
+							<div class="activities-item-image">
+								{% if pastEvent.hauptbild|length %}
+								<img src="{{ pastEvent.hauptbild.one().getUrl('hauptbildAnlaesse') }}" />
+								{% endif %}
+							</div>
+
+							<div class="activities-item-details">
+								<div class="activities-item-contents">
+									<h3 class="activities-item-title">{{ pastEvent.title }}</h3>
+									
+									{% if pastEvent.datumVon|date("Y-m-d") == pastEvent.datumBis|date("Y-m-d") %}
+										{% set dateString = pastEvent.datumVon|date("d. F Y") %}
+									{% else %}
+										{% set dateString = pastEvent.datumVon|date("d.") ~ " bis " ~ pastEvent.datumBis|date("d. F Y") %}
+									{% endif %}								
+									<p class="activities-item-date">{{ dateString }}</p>
+									<p class="activities-item-excerpt">
+										{{ pastEvent.teaserText|nl2br }}
+									</p>
+								</div>
+
+								<a href="/{{ pastEvent.uri}}" class="btn btn-red activities-item-btn">Bericht & Impressionen</a>
+							</div>
+						</li>
+						{% endfor %}	
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</div>	
+	
+{% endblock %}	

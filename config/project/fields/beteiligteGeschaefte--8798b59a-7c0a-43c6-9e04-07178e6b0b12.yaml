@@ -1,0 +1,115 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: 082ad13f-f236-4f64-9c39-e68ef38a0bdd # Verein
+handle: beteiligteGeschaefte
+instructions: ''
+name: 'Beteiligte Geschäfte'
+searchable: true
+settings:
+  addRowLabel: 'Geschäft hinzufügen'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Firma
+            -
+              - handle
+              - firma
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Adresse
+            -
+              - handle
+              - adresse
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col4
+        -
+          __assoc__:
+            -
+              - heading
+              - Ort
+            -
+              - handle
+              - ort
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col5
+        -
+          __assoc__:
+            -
+              - heading
+              - Telefon
+            -
+              - handle
+              - telefon
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col6
+        -
+          __assoc__:
+            -
+              - heading
+              - Link
+            -
+              - handle
+              - link
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col3
+          - ''
+        -
+          - col4
+          - ''
+        -
+          - col5
+          - ''
+        -
+          - col6
+          - 'http(s)://...'
+  maxRows: ''
+  minRows: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

@@ -1,0 +1,183 @@
+{% extends "_layout" %}
+{% set title = entry.title %}
+
+{% if craft.app.request.getQueryParam('submissiontype') == 'abmeldung' and entry.mitAbmeldeformular == '1' %}
+{% set formType = "Abmeldung" %}
+{% else %}
+{% set formType = "Anmeldung" %}
+{% endif %}
+
+{% block content %}
+
+<div class="section py-large">
+	<div class="container">
+		<div class="section-content">
+			<h1 class="section-title">{{ entry.title }}</h1>
+
+			<div class="row">
+				<div class="col-lg-6">
+					<img src="{{ entry.hauptbild.one().getUrl('hauptbildAnlaesse') ?? '' }}" class="w-100 mb-small" />
+
+					{% if entry.datumVon > now %}
+					<div class="div-table">
+						<div class="row">
+							<div class="col-lg-4">
+								<b class="text-red">Datum</b>
+							</div>
+							<div class="col-lg-8">
+								{% if entry.datumVon|date("Ymd") == entry.datumBis|date("Ymd") %}
+								{{ entry.datumVon|date("d. F Y") }}
+								{% else %}
+								{{ entry.datumVon|date("d.") }} bis {{ entry.datumBis|date("d. F Y") }}
+								{% endif %}
+							</div>
+						</div>
+						{% if entry.datumVon|date("H:i") != "00:00" %}
+						<div class="row">
+							<div class="col-lg-4">
+								<b class="text-red">Beginn</b>
+							</div>
+							<div class="col-lg-8">
+								{{ entry.datumVon|date("H:i") }} Uhr
+							</div>
+						</div>
+						{% endif %}
+						<div class="row">
+							<div class="col-lg-4"><b class="text-red">Ort</b></div>
+							<div class="col-lg-8">{{ entry.ort }}</div>
+						</div>
+						<div class="row">
+							<div class="col-lg-4"><b class="text-red">Kosten</b></div>
+							<div class="col-lg-8">{{ entry.kosten }}</div>
+						</div>
+						{% if entry.anmeldefrist %}
+						<div class="row">
+							<div class="col-lg-4"><b class="text-red">Anmeldeschluss</b></div>
+							<div class="col-lg-8">{{ entry.anmeldefrist|date("d. F Y") }}</div>
+						</div>
+						{% endif %}
+						<div class="row">
+							<div class="col-lg-4"><b class="text-red">Teilnehmer</b></div>
+							{% if entry.maxAnzahlTeilnehmer > 0 %}
+							<div class="col-lg-8">max. {{ entry.maxAnzahlTeilnehmer }} Personen</div>
+							{% else %}
+							<div class="col-lg-8">Unbegrenzt</div>
+							{% endif %}
+						</div>
+						{% if entry.datumBis > now and entry.mitAnmeldeformular == '1' %}
+						<div class="row">
+							<div class="col-lg-4"><b class="text-red">Anzahl pro Firma</b></div>
+							<div class="col-lg-8">max. {{ entry.anzahlProFirma }} Person{% if entry.anzahlProFirma > 2 %}en{% endif %}en</div>
+						</div>
+						{% endif %}
+						<div class="row">
+							<div class="col-lg-4"><b class="text-red">Bemerkung</b></div>
+							<div class="col-lg-8">{{ entry.bemerkungen ?? "Keine" }}</div>
+						</div>
+					</div>
+					{% endif %}
+				</div>
+				<div class="col-lg-6">
+					{% if entry.datumBis < now and entry.resume %}
+					{{ entry.resume }}
+					{% else %}
+					{{ entry.inhalt }}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% if entry.datumBis > now and (entry.mitAnmeldeformular == '1' or entry.mitAbmeldeformular == '1') %}
+
+<div class="section py-regular bg-lightgray mb-regular">
+	<div class="container">
+		<div class="section-content">
+			<h2 class="section-title">{{ formType }}</h2>
+
+			{% if craft.app.request.getQueryParam('success') == 1 %}
+			<div class="alert alert-success" role="alert">
+				Vielen Dank, Ihre {{ formType }} wurde versendet.
+			</div>
+			{% endif %}
+
+			{% if entry.mitAnmeldeformular == '1' and formType == 'Anmeldung' %}
+				{% include "events/_form" with { formHandle: 'anmeldung' } %}
+			{% elseif entry.mitAbmeldeformular == '1' and formType == 'Abmeldung' %}
+				{% include "events/_form_abmeldung" with { formHandle: 'abmeldung' } %}
+			{% endif %}
+
+		</div>
+	</div>
+</div>
+
+		{% if formType == 'Anmeldung' and entry.mitAbmeldeformular == '1' %}
+
+		<div class="section py-regular bg-lightgray mb-regular">
+			<div class="container">
+				<div class="section-content">
+					<h2 class="section-title">Absage</h2>
+
+					{% if craft.app.request.getQueryParam('success') == 1 %}
+					<div class="alert alert-success" role="alert">
+						Vielen Dank, Ihre Abmeldung wurde versendet.
+					</div>
+					{% endif %}
+
+					{% include "events/_form_abmeldung" with { formHandle: 'abmeldung' } %}
+				</div>
+			</div>
+		</div>
+		{% endif %}
+
+{% else %}
+
+{% include '/partials/impressionen.twig' with {'bgClass': 'bg-lightgray'} %}
+
+{% endif %}
+{#
+<div class="content">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 mb-3 mb-lg-0">
+				<h1 class="text-uppercase mb-4">{{ entry.title }}</h1>
+				{{ entry.inhalt }}
+			</div>
+
+			<div class="col-lg-6">
+				{% if entry.flyer|length %}
+				<a href="{{ entry.flyer.one().getUrl() }}" target="_blank">
+					{% endif %}
+
+					{% if entry.eventbild|length %}
+					<img src="{{ entry.eventbild.one().getUrl('eventFlyer') }}" class="img-fluid m-auto" />
+					{% endif %}
+
+					{% if entry.flyer|length %}
+				</a>
+				{% endif %}
+			</div>
+		</div>
+
+		{% if entry.impressionen|length %}
+		<div class="gray-box event-gallery">
+			<h2 class="gray-box-title">
+				Impressionen
+			</h2>
+
+			<div class="row row-small-padding">
+				{% for pic in entry.impressionen.all() %}
+				<div class="col-lg-3">
+					<a href="{{ pic.getUrl() }}" data-toggle="lightbox" data-title="{{ entry.title }}" data-gallery="event-image-gallery" class="event-gallery-image">
+						<img src="{{ pic.getUrl('impressionenThumbs') }}"/>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+		{% endif %}
+	</div>
+</div>
+#}
+{% endblock %}

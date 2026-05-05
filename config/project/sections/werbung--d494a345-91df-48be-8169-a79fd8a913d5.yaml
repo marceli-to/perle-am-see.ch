@@ -1,0 +1,12 @@
+defaultPlacement: end
+enableVersioning: true
+handle: werbung
+name: Werbung
+propagationMethod: all
+siteSettings:
+  1284ef47-40f2-4a34-bcce-65fbed0143e5: # Gewerbeverein Pfäffikon - die Perle am See
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: channel

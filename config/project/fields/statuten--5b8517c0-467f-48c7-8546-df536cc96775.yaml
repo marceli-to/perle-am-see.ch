@@ -1,0 +1,36 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 082ad13f-f236-4f64-9c39-e68ef38a0bdd # Verein
+handle: statuten
+instructions: ''
+name: Statuten
+searchable: true
+settings:
+  allowSelfRelations: false
+  allowUploads: true
+  allowedKinds:
+    - excel
+    - pdf
+    - powerpoint
+    - word
+  defaultUploadLocationSource: 'volume:283701df-25fb-4029-8398-1a1d4f4565bc' # Dokumente
+  defaultUploadLocationSubpath: ''
+  limit: ''
+  localizeRelations: false
+  previewMode: full
+  restrictFiles: '1'
+  selectionLabel: ''
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: true
+  singleUploadLocationSource: 'volume:283701df-25fb-4029-8398-1a1d4f4565bc' # Dokumente
+  singleUploadLocationSubpath: Statuten
+  source: null
+  sources: '*'
+  targetSiteId: null
+  useSingleFolder: true
+  validateRelatedElements: false
+  viewMode: list
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Assets

@@ -1,0 +1,47 @@
+fieldLayouts:
+  dd73656f-d1d9-4d51-ab7f-840a68f14281:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AssetTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: 42231358-a86a-4b93-8d4e-a7ab9c7e07c0 # Webseite
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Inhalt
+        sortOrder: 1
+fs: logoWall
+handle: logoWall
+hasUrls: true
+name: 'Logo Wall'
+sortOrder: 5
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+url: '@web/assets/logowall'

@@ -1,0 +1,51 @@
+fieldLayouts:
+  bdd58d2e-b00d-446a-9194-dd2e8cd6ebaf:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            warning: null
+            width: 100
+          -
+            fieldUid: ece69c20-e9b9-4c5a-afd0-af0142717b1f # Header Bild
+            instructions: null
+            label: null
+            required: '0'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            style: tip
+            tip: 'Der Inhalt der Datenschutzerklärung wird direkt von einem externen Partner geliefert und laufend aktualisiert. Eine Bearbeitung ist daher nicht möglich.'
+            type: craft\fieldlayoutelements\Tip
+        name: Common
+        sortOrder: 1
+handle: datenschutz
+hasTitleField: false
+name: Datenschutz
+section: 90fc9697-b486-467c-a4ee-0a00a6b2bd45 # Datenschutz
+sortOrder: 1
+titleFormat: '{section.name|raw}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

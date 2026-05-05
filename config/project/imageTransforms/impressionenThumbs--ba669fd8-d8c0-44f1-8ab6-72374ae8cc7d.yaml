@@ -1,0 +1,10 @@
+format: null
+handle: impressionenThumbs
+height: 263
+interlace: none
+mode: crop
+name: 'Impressionen Thumbs'
+position: center-center
+quality: null
+upscale: true
+width: 380

@@ -1,0 +1,172 @@
+{% extends "_layout" %}
+{% set title = entry.title %}
+
+{% block content %}
+
+	{% set bannerClass = "banner" %}
+	{% if entry.type == 'adventstuerli' or entry.type == 'aufgetischt' %}
+		{% set bannerClass = "banner banner-high" %}
+	{% endif %}
+
+	{% if entry.headerBild|length %}
+	<div class="{{ bannerClass }}" style="background-image: url({{ entry.headerBild.one().getUrl() }});"></div>
+	{% endif %}
+
+	
+	{% if entry.type == 'aufgetischt' %}
+
+		<style>
+
+			/* Base styles (keeping your existing styles) */
+			.logo-row {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: flex-start; /* Left align for both orientations */
+				align-items: center;
+			}
+
+			.logo-item {
+				display: flex;
+				justify-content: flex-start; /* Changed from space-between to flex-start */
+				align-items: center;
+				margin: 5px;
+				height: 100px;
+			}
+
+			.logo-item img {
+				max-height: 100%;
+				height: 100px;
+				width: auto;
+			}
+
+			/* Horizontal orientation */
+			.logo-row.horizontal {
+				flex-direction: row;
+			}
+
+			/* Vertical orientation */
+			.logo-row.vertical {
+				flex-direction: column;
+				align-items: flex-start; /* Changed from stretch to flex-start for left alignment */
+			}
+
+			.logo-row.vertical .logo-item {
+				width: auto; /* Changed from 100% to auto so it doesn't take full width */
+				justify-content: flex-start; /* Left align the content */
+				margin: 10px 0; /* Vertical spacing */
+			}
+
+			.logo-row.vertical .logo-item img {
+				max-width: 200px; /* Optional: limit width in vertical layout */
+			}
+
+		</style>
+
+		{% set bannerClass = "banner banner-high" %}
+
+		<div class="section py-large">
+			<div class="container">
+				<div class="section-content">
+					<h1 class="section-title">{{ entry.titel }}</h1>
+					<div class="row align-items-center">
+						<div class="col-lg-5 py-3">
+							<img src="{{ entry.bildUeberDenVerein.one().getUrl('') ?? '' }}" class="w-100 mx-auto">
+						</div>
+						<div class="col-lg-7 py-3">
+							
+							{{ entry.ueberDenVerein }}
+							
+						</div>
+					</div>
+				</div>
+
+				<div class="section-content generic aufgetischt-content">
+
+					{% set content = entry.inhalt %}
+
+					{# Define the logo wall mappings with vertical as default #}
+					{% set logoWallMappings = {
+					'###LOGOWALL###': entry.logoWall,
+					'###LOGOWALL2###': entry.logoWall2,
+					'###LOGOWALL3###': entry.logoWall3,
+					'###LOGOWALL-HORIZONTAL###': entry.logoWall,
+					'###LOGOWALL2-HORIZONTAL###': entry.logoWall2,
+					'###LOGOWALL3-HORIZONTAL###': entry.logoWall3
+					} %}
+
+					{# Function to render a logo wall #}
+					{% macro renderLogoWall(logoWallField, orientation = 'vertical') %}
+					{% if logoWallField|length %}
+					<div class="logo-row {{ orientation }} my-3 mb-4">
+						{% for werbung in logoWallField %}
+						{% if werbung|length %}
+						<div class="logo-item">
+							<a href="{{ werbung.webseite }}" target="_blank">
+								<img src="{{ werbung.getUrl() }}" />
+							</a>
+						</div>
+						{% endif %}
+						{% endfor %}
+					</div>
+					{% endif %}
+					{% endmacro %}
+
+					{# Process content by replacing placeholders with actual logo walls #}
+					{% set processedContent = content %}
+					{% for placeholder, logoWallField in logoWallMappings %}
+					{% if placeholder in processedContent %}
+					{% set orientation = 'HORIZONTAL' in placeholder ? 'horizontal' : 'vertical' %}
+					{% set logoWallHtml %}{{ _self.renderLogoWall(logoWallField, orientation) }}{% endset %}
+					{% set processedContent = processedContent|replace({(placeholder): logoWallHtml}) %}
+					{% endif %}
+					{% endfor %}
+
+					{{ processedContent|raw }}
+
+				</div>
+			</div>
+		</div>
+
+		{% if 1=="off" %}
+		<div class="section py-regular bg-lightgray mb-regular">
+			<div class="container">
+				<div class="section-content">
+					<h2 class="section-title">Anmeldung</h2>
+		
+					{% if craft.app.request.getQueryParam('success') == 1 %}
+					<div class="alert alert-success" role="alert">
+						Vielen Dank, Ihre Anmeldung wurde versendet.
+					</div>
+					{% endif %}
+		
+						{# include "partials/aufgetischt/_form.twig" with { formHandle: 'aufgetischt' } #}
+						<a href="https://shop.e-guma.ch/zuerioberland/de/tickets/aufgetischt-pfaeffikon-%E2%99%BF-2370685" target="_blank" class="btn btn-red text-uppercase">Jetzt Tisch reservieren</a>
+
+				</div>
+			</div>
+		</div>
+		{% endif %}
+
+	{% else %}
+
+		<div class="section py-regular">
+			<div class="container">
+				<div class="section-content generic">
+					<h1 class="section-title">{{ entry.title }}</h1>
+					{{ entry.inhalt }}
+				</div>
+			</div>
+		</div>
+
+	{% endif %}
+	
+	{% if entry.type == 'pfaeffikerTaler' %}
+		{% include '/partials/pfaeffikerTaler/beteiligteGeschaefte.twig' %}
+	{% endif %}
+
+	{% if entry.type == 'adventstuerli' %}
+		{% include '/partials/adventstuerli/adventstuerliKalender.twig' %}
+		{% include '/partials/impressionen.twig' with {'bgClass': ''} %}
+	{% endif %}
+
+{% endblock %}

@@ -1,0 +1,32 @@
+<div class="section py-regular bg-lightgray mb-medium">
+    <div class="container">
+        <div class="section-content">
+            <h1 class="section-title">Kalender</h1>
+
+            <div class="div-table">
+                {% for row in entry.adventstuerliKalender %}
+                    <div class="row div-table-row ">
+                        <div class="col-lg-2">
+                            <b>{{ row.datum }}</b>
+                        </div>
+                        <div class="col-lg-4">
+                            {% if row.linkFuerFirmaVerein|length %}
+                                <a href="{{ row.linkFuerFirmaVerein }}" target="_blank">
+                            {% endif %}
+                            {{ row.firmaVerein }}
+                            {% if row.linkFuerFirmaVerein|length %}
+                                </a>
+                            {% endif %}
+                        </div>
+                        <div class="col-lg-4">
+                            {{ row.aktivitaeten|nl2br }}
+                        </div>
+                        <div class="col-lg-2">
+                            {{ row.zeiten }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

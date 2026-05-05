@@ -1,0 +1,31 @@
+<div class="section py-regular bg-lightgray mb-medium">
+    <div class="container">
+        <div class="section-content">
+            <h1 class="section-title">Beteiligte Geschäfte</h1>
+
+            <div class="div-table">
+                {% for row in entry.beteiligteGeschaefte %}
+                    <div class="row div-table-row ">
+                        <div class="col-lg-3">
+                            <b>{{ row.firma }}</b>
+                        </div>
+                        <div class="col-lg-3">
+                            {{ row.adresse }}
+                        </div>
+                        <div class="col-lg-3">
+                            {{ row.ort }}
+                        </div>
+                        <div class="col-lg-2">
+                            {{ row.telefon }}
+                        </div>
+                        {% if row.link %}
+                            <div class="col-lg-1">
+                                <a href="{{ row.link }}" target="_blank" rel="noopener noreferrer" class="text-red">Link</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+columnSuffix: null
+contentColumnType: integer(10)
+fieldGroup: 83ac917a-7b56-4cc0-8117-026d1c05f4e1 # Agenda
+handle: manuelleAnmeldungen
+instructions: 'Anzahl Teilnehmer, die sich nicht über die Webseite angemeldet haben. Diese Zahl dient zur korrekten Berechnung der noch möglichen Anmeldungen.'
+name: 'Manuelle Anmeldungen'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: 0
+  max: null
+  min: 0
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

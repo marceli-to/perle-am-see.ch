@@ -1,0 +1,12 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: 83ac917a-7b56-4cc0-8117-026d1c05f4e1 # Agenda
+handle: eMailAdresseFuerAnmeldungen
+instructions: 'An diese Adresse werden die Anmeldungen des Formulars geschickt.'
+name: 'E-Mail Adresse für Anmeldungen'
+searchable: true
+settings:
+  placeholder: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Email

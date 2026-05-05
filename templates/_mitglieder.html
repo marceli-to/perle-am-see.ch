@@ -1,0 +1,15 @@
+{% extends "_layout" %}
+{% set title = "Mitglieder" %}
+
+{% block content %}
+	<div class="section py-large">
+		<div class="container">
+			<div class="section-content">
+				<h1 class="section-title">Mitglieder</h1>
+				{{ entry.inhalt }}
+				<script src="https://integrate.ox2.ch/zuerich/memberships.js?apikey={{ getenv('OX2_MEMBERSHIPS_KEY') }}&script=memberships"></script>
+			</div>
+		</div>
+	</div>
+	
+{% endblock %}

@@ -1,0 +1,96 @@
+columnSuffix: null
+contentColumnType: text
+fieldGroup: 082ad13f-f236-4f64-9c39-e68ef38a0bdd # Verein
+handle: vorstand
+instructions: ''
+name: Vorstand
+searchable: true
+settings:
+  addRowLabel: 'Person hinzufügen'
+  columnType: text
+  columns:
+    __assoc__:
+      -
+        - col1
+        -
+          __assoc__:
+            -
+              - heading
+              - Funktion
+            -
+              - handle
+              - funktion
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col3
+        -
+          __assoc__:
+            -
+              - heading
+              - Name
+            -
+              - handle
+              - name
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col2
+        -
+          __assoc__:
+            -
+              - heading
+              - Firma/Mitglied
+            -
+              - handle
+              - firmaMitglied
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+      -
+        - col4
+        -
+          __assoc__:
+            -
+              - heading
+              - E-Mail
+            -
+              - handle
+              - eMail
+            -
+              - width
+              - ''
+            -
+              - type
+              - singleline
+  defaults:
+    -
+      __assoc__:
+        -
+          - col1
+          - ''
+        -
+          - col3
+          - ''
+        -
+          - col2
+          - ''
+        -
+          - col4
+          - ''
+  maxRows: ''
+  minRows: ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Table

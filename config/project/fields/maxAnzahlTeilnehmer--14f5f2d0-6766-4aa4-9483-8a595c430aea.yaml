@@ -1,0 +1,20 @@
+columnSuffix: null
+contentColumnType: integer(10)
+fieldGroup: 83ac917a-7b56-4cc0-8117-026d1c05f4e1 # Agenda
+handle: maxAnzahlTeilnehmer
+instructions: 'Beim Erreichen der maximalen Anzahl Teilnehmer wird das Anmeldeformular auf der Webseite ausgeblendet und ein entsprechender Hinweis angezeigt.'
+name: 'Max Anzahl Teilnehmer'
+searchable: true
+settings:
+  decimals: 0
+  defaultValue: null
+  max: null
+  min: 1
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  suffix: Teilnehmer
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number
