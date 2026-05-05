@@ -56,4 +56,5 @@ prepros-6.config
 !/.ddev/docker-compose.vite.yaml
 !/storage/.gitignore
 /web/cpresources
+/web/robots.txt
 /web/.user.ini
