@@ -1,6 +1,6 @@
 {
   "require": {
-    "craftcms/cms": "4.17.15",
+    "craftcms/cms": "4.18.9",
     "craftcms/feed-me": "5.14.0",
     "craftcms/redactor": "^3.1.0",
     "craftcms/security-patches": "dev-main",
